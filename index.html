@@ -77,6 +77,8 @@ const removeTodoElem=(e)=>{
         return curTodo != todoListContent.toLowerCase();
     });
     addTodoListLocalStorage(localTodoLists);
+
+    
     parentElem.remove();
     
     
@@ -85,6 +87,7 @@ const removeTodoElem=(e)=>{
  
 mainTodoElem.addEventListener("click",(e)=>{
 e.preventDefault();
+if(e.target.classList.contains("deleteBtn"))
 removeTodoElem(e);
 });
 document.querySelector(".btn").addEventListener("click",(e)=>{
